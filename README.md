@@ -1,3 +1,5 @@
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falvinkwong47%2Fcakephp-ex.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Falvinkwong47%2Fcakephp-ex?ref=badge_shield)
+
 
 
 <!-- toc -->
@@ -29,6 +31,9 @@ The steps in this document assume that you have access to an OpenShift deploymen
 OpenShift Considerations
 ------------------------
 These are some special considerations you may need to keep in mind when running your application on OpenShift.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falvinkwong47%2Fcakephp-ex.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Falvinkwong47%2Fcakephp-ex?ref=badge_large)
 
 ### Security
 Since the quickstarts are shared code, we had to take special consideration to ensure that security related configuration variable values are unique across applications. To accomplish this, we modified some of the configuration files. Namely we changed Security.salt and Security.cipherSeed values in the app/Config/core.php config file. Those values are now generated from the application template as CAKEPHP_SECURITY_SALT and CAKEPHP_SECURITY_CIPHER_SEED. Also the secret token is generated in the template as CAKEPHP_SECRET_TOKEN. From these values the session hashes are generated. Now instead of using the same default values, OpenShift can generate these values using the generate from logic defined within the instant application's template.
